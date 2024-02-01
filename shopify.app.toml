@@ -1,12 +1,13 @@
 # Learn more about configuring your app at https://shopify.dev/docs/apps/tools/cli/configuration
 
-client_id = "a8ee081244f5ebb0062d2f1a535d5397"
-name = "gil-exam"
-handle = "gil-exam"
+client_id = "fc41a45ac11d418986a6ff76a43d9ad4"
+name = "gil-test"
+handle = "gil-test"
 application_url = "https://shopify.dev/apps/default-app-home"
 embedded = true
 
 [build]
+dev_store_url = "gil-function-test.myshopify.com"
 include_config_on_deploy = true
 
 [access_scopes]

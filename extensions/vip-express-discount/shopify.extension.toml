@@ -18,3 +18,9 @@ type = "function"
   [extensions.ui.paths]
   create = "/"
   details = "/"
+
+  [extensions.input.variables]
+  namespace = "$app:vip-express-discount"
+  key = "function-configuration"
+
+

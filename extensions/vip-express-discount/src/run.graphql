@@ -1,4 +1,4 @@
-query RunInput {
+query RunInput($customerTag: String!) {
   discountNode {
     metafield(
       namespace: "$app:vip-express-discount"
@@ -11,7 +11,7 @@ query RunInput {
     buyerIdentity {
       customer {
         numberOfOrders
-        hasTags(tags: ["vip"]) {
+        hasTags(tags: [$customerTag]) {
           hasTag
           tag
         }

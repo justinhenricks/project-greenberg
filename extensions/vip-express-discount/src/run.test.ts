@@ -6,7 +6,10 @@ describe("VIP express discount", () => {
   it("returns 50% off express if tagged VIP and first order", () => {
     const result = run({
       discountNode: {
-        metafield: null,
+        metafield: {
+          value:
+            '{"discount":"40","method_name":"express","customerTag":"vip"}',
+        },
       },
       cart: {
         buyerIdentity: {
@@ -119,7 +122,10 @@ describe("VIP express discount", () => {
   it("returns no discount if tagged VIP and not first order", () => {
     const result = run({
       discountNode: {
-        metafield: null,
+        metafield: {
+          value:
+            '{"discount":"40","method_name":"express","customerTag":"vip"}',
+        },
       },
       cart: {
         buyerIdentity: {
@@ -167,7 +173,10 @@ describe("VIP express discount", () => {
   it("returns 50% off for both express options if tagged VIP and first order, with multiple delivery groups", () => {
     const result = run({
       discountNode: {
-        metafield: null,
+        metafield: {
+          value:
+            '{"discount":"40","method_name":"express","customerTag":"vip"}',
+        },
       },
       cart: {
         buyerIdentity: {

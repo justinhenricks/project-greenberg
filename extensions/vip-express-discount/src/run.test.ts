@@ -49,7 +49,7 @@ describe("VIP express discount", () => {
         {
           value: {
             percentage: {
-              value: "100",
+              value: "50",
             },
           },
           targets: [

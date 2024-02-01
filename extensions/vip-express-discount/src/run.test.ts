@@ -3,7 +3,7 @@ import { FunctionResult } from "../generated/api";
 import { run } from "./run";
 
 const METAFIELD_JSON =
-  '{"discount":"40","method_name":"express","customerTag":"vip"}';
+  '{"discount":"50","methodName":"express","customerTag":"vip"}';
 
 describe("VIP express discount", () => {
   it("returns 50% off express if tagged VIP and first order", () => {

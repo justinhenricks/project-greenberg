@@ -6,7 +6,7 @@ const EMPTY_DISCOUNT: FunctionRunResult = {
 
 type Configuration = {
   discount: string;
-  method_name: string;
+  methodName: string;
   customerTag: string;
 };
 
@@ -35,7 +35,7 @@ export function run(input: RunInput): FunctionRunResult {
       group.deliveryOptions.forEach((option) => {
         if (
           option.title?.toLowerCase() ===
-          configuration.method_name.toLowerCase()
+          configuration?.methodName?.toLowerCase()
         ) {
           expressOptions.push({
             deliveryOption: {

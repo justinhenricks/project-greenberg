@@ -1,74 +1,49 @@
-# Shopify App Template - None (app with extensions only)
+# First Time VIP Customers Expreess Shipping Discount
 
-This is a template for building a [Shopify app](https://shopify.dev/docs/apps/getting-started) that includes no app home UI. It contains the basics for building a Shopify app that uses only app extensions.
-
-**If you plan for your app to load its own page in the Shopify Admin, then you'll want to choose one of our other templates.**
-
-Whether you choose to use this template or another one, you can use your preferred package manager and the Shopify CLI with [these steps](#installing-the-template).
-
-## Benefits
-
-Shopify apps are built on a variety of Shopify tools to create a great merchant experience. The [create an app](https://shopify.dev/docs/apps/getting-started/create) tutorial in our developer documentation will guide you through creating a Shopify app.
-
-This app template does little more than install the CLI and scaffold a respository.
-
-## Getting started
+This is a demonstration proof of concept for a Shopify shipping discount function.
 
 ### Requirements
 
-1. You must [download and install Node.js](https://nodejs.org/en/download/) if you don't already have it.
-1. You must [create a Shopify partner account](https://partners.shopify.com/signup) if you don’t have one.
-1. You must create a store for testing if you don't have one, either a [development store](https://help.shopify.com/en/partners/dashboard/development-stores#create-a-development-store) or a [Shopify Plus sandbox store](https://help.shopify.com/en/partners/dashboard/managing-stores/plus-sandbox-store).
+Create a Shipping Discount using [Shopify Discount APIs](https://shopify.dev/docs/api/functions/reference/shipping-discounts). The discount function should:
 
-### Installing the template
+- Offer 50% off the shipping method named `Express` when that customer is tagged as `VIP` as long as it’s the customer’s first order with this store.
+- Include the appropriate [test cases](https://shopify.dev/docs/apps/functions/testing-and-debugging).
 
-This template can be installed using your preferred package manager:
+### Bonus configuration
 
-Using yarn:
+The function accepts a JSON metafield: `$app:vip-express-discount` in the following format:
 
-```shell
-yarn create @shopify/app
+```
+type Configuration = {
+  discount: string;
+  methodName: string;
+  customerTag: string;
+};
 ```
 
-Using npm:
+The specified customer tag, applicable shipping method, and qualifying tag all get passed and used in the business logic of the function.
 
-```shell
-npm init @shopify/app@latest
-```
+## Local Development
 
-Using pnpm:
+1. Pull the project
+2. Connect to an app in partner, run locally: `npm run dev`
+3. Install the app on a dev store
+4. Configure the function:
+   1. Visit Discounts
+   2. Create Discount: `vip-express-discount`
+   3. Configure specifying applicable customer tag, shipping discount percentage, and the shipping rate name to apply.
+5. Be sure a customer exists with that tag, and you have created a shipping method named what you configured
+6. Checkout with that customer and you should see the discount applied to the correct shipping rate
 
-```shell
-pnpm create @shopify/app@latest
-```
+NOTE: The configuration UI/UX is very much at a proof of concept stage.
 
-This will clone the template and install the required dependencies.
+## Testing
 
-#### Local Development
+To run the automated test suite of the function:
 
-[The Shopify CLI](https://shopify.dev/docs/apps/tools/cli) connects to an app in your Partners dashboard. It provides environment variables and runs commands in parallel..
-
-You can develop locally using your preferred package manager. Run one of the following commands from the root of your app.
-
-Using yarn:
-
-```shell
-yarn dev
-```
-
-Using npm:
-
-```shell
-npm run dev
-```
-
-Using pnpm:
-
-```shell
-pnpm run dev
-```
-
-Open the URL generated in your console. Once you grant permission to the app, you can start development (such as generating extensions).
+1. `cd extensions/vip-express-discount`
+2. run: `npm run test`
+3. should see all test cases passing
 
 ## Developer resources
 

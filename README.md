@@ -1,4 +1,4 @@
-# First Time VIP Customers Expreess Shipping Discount
+# First Time VIP Customers Express Shipping Discount
 
 This is a demonstration proof of concept for a Shopify shipping discount function.
 

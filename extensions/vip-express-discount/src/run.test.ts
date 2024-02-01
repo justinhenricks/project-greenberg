@@ -60,7 +60,7 @@ describe("VIP express discount", () => {
               },
             },
           ],
-          message: "50% off express shipping!",
+          message: "50% off express shipping for our VIPs!",
         },
       ],
     };
@@ -159,6 +159,84 @@ describe("VIP express discount", () => {
 
     const expected: FunctionResult = {
       discounts: [],
+    };
+
+    expect(result).toEqual(expected);
+  });
+
+  it("returns 50% off for both express options if tagged VIP and first order, with multiple delivery groups", () => {
+    const result = run({
+      discountNode: {
+        metafield: null,
+      },
+      cart: {
+        buyerIdentity: {
+          customer: {
+            numberOfOrders: 0,
+            hasTags: [
+              {
+                hasTag: true,
+                tag: "VIP",
+              },
+            ],
+          },
+        },
+        deliveryGroups: [
+          {
+            deliveryOptions: [
+              {
+                title: "Economy",
+                handle:
+                  "538e36d0567ff7ccdda95a73e62478cb-9e912b3dae9b0e04b6f1facf08aa7cb2",
+              },
+              {
+                title: "Standard",
+                handle:
+                  "538e36d0567ff7ccdda95a73e62478cb-ee768830e386b87e4f230f4292c237a3",
+              },
+              {
+                title: "Express",
+                handle:
+                  "538e36d0567ff7ccdda95a73e62478cb-9bc19cc1ae6807304d5d933ef3f1056d",
+              },
+            ],
+          },
+          {
+            deliveryOptions: [
+              {
+                title: "Express",
+                handle: "another-handle-for-express-option",
+              },
+            ],
+          },
+        ],
+      },
+    });
+
+    const expected: FunctionResult = {
+      discounts: [
+        {
+          value: {
+            percentage: {
+              value: "50",
+            },
+          },
+          targets: [
+            {
+              deliveryOption: {
+                handle:
+                  "538e36d0567ff7ccdda95a73e62478cb-9bc19cc1ae6807304d5d933ef3f1056d",
+              },
+            },
+            {
+              deliveryOption: {
+                handle: "another-handle-for-express-option",
+              },
+            },
+          ],
+          message: "50% off express shipping for our VIPs!",
+        },
+      ],
     };
 
     expect(result).toEqual(expected);

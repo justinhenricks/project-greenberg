@@ -3,19 +3,24 @@
 client_id = "fc41a45ac11d418986a6ff76a43d9ad4"
 name = "gil-test"
 handle = "gil-test"
-application_url = "https://shopify.dev/apps/default-app-home"
+application_url = "https://registered-philippines-workout-leaders.trycloudflare.com"
 embedded = true
 
 [build]
+automatically_update_urls_on_dev = true
 dev_store_url = "gil-function-test.myshopify.com"
 include_config_on_deploy = true
 
 [access_scopes]
 # Learn more at https://shopify.dev/docs/apps/tools/cli/configuration#access_scopes
-scopes = "write_discounts"
+scopes = "write_discounts,write_products"
 
 [auth]
-redirect_urls = [ "https://shopify.dev/apps/default-app-home/api/auth" ]
+redirect_urls = [
+  "https://registered-philippines-workout-leaders.trycloudflare.com/auth/callback",
+  "https://registered-philippines-workout-leaders.trycloudflare.com/auth/shopify/callback",
+  "https://registered-philippines-workout-leaders.trycloudflare.com/api/auth/callback"
+]
 
 [webhooks]
 api_version = "2024-01"

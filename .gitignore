@@ -1,15 +1,24 @@
+# Environment Configuration
+.env
+.env.*
+
+# Dependency directory
 node_modules
 
-/.cache
-/build
-/app/build
-/public/build/
-/public/_dev
-/app/public/build
-/prisma/dev.sqlite
-/prisma/dev.sqlite-journal
-database.sqlite
+# Test coverage directory
+coverage
 
-.env
+# Ignore Apple macOS Desktop Services Store
+.DS_Store
+
+# Logs
+logs
+*.log
+
+# extensions build output
+extensions/*/build
+
+# lock files
 package-lock.json
 yarn.lock
+pnpm-lock.yaml

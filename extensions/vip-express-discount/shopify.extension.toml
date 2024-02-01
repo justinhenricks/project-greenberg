@@ -16,8 +16,9 @@ type = "function"
   path = "dist/function.wasm"
 
   [extensions.ui.paths]
-  create = "/"
-  details = "/"
+  create = "/app/vip-discount/:functionId/new"
+  details = "/app/vip-discount/:functionId/:id"
+
 
   [extensions.input.variables]
   namespace = "$app:vip-express-discount"

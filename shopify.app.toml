@@ -3,7 +3,7 @@
 client_id = "fc41a45ac11d418986a6ff76a43d9ad4"
 name = "gil-test"
 handle = "gil-test"
-application_url = "https://affects-solved-quote-hiking.trycloudflare.com"
+application_url = "https://nursery-reviewing-ruled-black.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,13 +17,13 @@ scopes = "write_discounts,write_products"
 
 [auth]
 redirect_urls = [
-  "https://affects-solved-quote-hiking.trycloudflare.com/auth/callback",
-  "https://affects-solved-quote-hiking.trycloudflare.com/auth/shopify/callback",
-  "https://affects-solved-quote-hiking.trycloudflare.com/api/auth/callback"
+  "https://nursery-reviewing-ruled-black.trycloudflare.com/auth/callback",
+  "https://nursery-reviewing-ruled-black.trycloudflare.com/auth/shopify/callback",
+  "https://nursery-reviewing-ruled-black.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]
-api_version = "2024-01"
+api_version = "unstable"
 
 [pos]
 embedded = false

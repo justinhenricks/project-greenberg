@@ -1,7 +1,26 @@
 query RunInput {
   discountNode {
-    metafield(namespace: "$app:vip-express-discount", key: "function-configuration") {
+    metafield(
+      namespace: "$app:vip-express-discount"
+      key: "function-configuration"
+    ) {
       value
+    }
+  }
+  cart {
+    buyerIdentity {
+      customer {
+        numberOfOrders
+        hasTags(tags: ["vip"]) {
+          hasTag
+        }
+      }
+    }
+    deliveryGroups {
+      deliveryOptions {
+        title
+        handle
+      }
     }
   }
 }

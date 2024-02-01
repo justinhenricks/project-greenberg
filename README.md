@@ -48,8 +48,8 @@ To run the automated test suite of the function:
 ## Questions?
 
 1. Can this discount apply to only one-time purchases and not subscription products?
-   From what I can tell, it seems like the subscription products will also allow the discount function to run and for the customer to checkout with that shipping
-   option/discount selected.
+
+From what I can tell, it seems like the subscription products will also allow the discount function to run and for the customer to checkout with that shipping option/discount selected.
 
 There seems to be some limitations though in that, it looks like Shopify is defaulting to only showing the cheapest option, so if that happens to not be the method with this discount, it doesn't get shown.
 

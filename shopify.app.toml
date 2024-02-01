@@ -3,7 +3,7 @@
 client_id = "fc41a45ac11d418986a6ff76a43d9ad4"
 name = "gil-test"
 handle = "gil-test"
-application_url = "https://registered-philippines-workout-leaders.trycloudflare.com"
+application_url = "https://affects-solved-quote-hiking.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_discounts,write_products"
 
 [auth]
 redirect_urls = [
-  "https://registered-philippines-workout-leaders.trycloudflare.com/auth/callback",
-  "https://registered-philippines-workout-leaders.trycloudflare.com/auth/shopify/callback",
-  "https://registered-philippines-workout-leaders.trycloudflare.com/api/auth/callback"
+  "https://affects-solved-quote-hiking.trycloudflare.com/auth/callback",
+  "https://affects-solved-quote-hiking.trycloudflare.com/auth/shopify/callback",
+  "https://affects-solved-quote-hiking.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

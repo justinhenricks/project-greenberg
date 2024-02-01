@@ -55,7 +55,8 @@ describe("VIP express discount", () => {
           targets: [
             {
               deliveryOption: {
-                handle: "express",
+                handle:
+                  "538e36d0567ff7ccdda95a73e62478cb-9bc19cc1ae6807304d5d933ef3f1056d",
               },
             },
           ],

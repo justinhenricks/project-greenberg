@@ -252,7 +252,7 @@ export default function VolumeNew() {
           <Form method="post">
             <BlockStack align="space-around" gap="500">
               <Card>
-                <BlockStack gap="6">
+                <BlockStack gap="300">
                   <Text variant="headingMd" as="h2">
                     Discount Settings
                   </Text>

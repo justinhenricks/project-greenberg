@@ -2,13 +2,15 @@ import { describe, expect, it } from "vitest";
 import { FunctionResult } from "../generated/api";
 import { run } from "./run";
 
+const METAFIELD_JSON =
+  '{"discount":"40","method_name":"express","customerTag":"vip"}';
+
 describe("VIP express discount", () => {
   it("returns 50% off express if tagged VIP and first order", () => {
     const result = run({
       discountNode: {
         metafield: {
-          value:
-            '{"discount":"40","method_name":"express","customerTag":"vip"}',
+          value: METAFIELD_JSON,
         },
       },
       cart: {
@@ -52,7 +54,7 @@ describe("VIP express discount", () => {
         {
           value: {
             percentage: {
-              value: "50",
+              value: JSON.parse(METAFIELD_JSON).discount,
             },
           },
           targets: [
@@ -174,8 +176,7 @@ describe("VIP express discount", () => {
     const result = run({
       discountNode: {
         metafield: {
-          value:
-            '{"discount":"40","method_name":"express","customerTag":"vip"}',
+          value: METAFIELD_JSON,
         },
       },
       cart: {
@@ -227,7 +228,7 @@ describe("VIP express discount", () => {
         {
           value: {
             percentage: {
-              value: "50",
+              value: JSON.parse(METAFIELD_JSON).discount,
             },
           },
           targets: [

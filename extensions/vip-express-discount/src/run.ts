@@ -4,7 +4,11 @@ const EMPTY_DISCOUNT: FunctionRunResult = {
   discounts: [],
 };
 
-type Configuration = {};
+type Configuration = {
+  discount: string;
+  method_name: string;
+  customerTag: string;
+};
 
 interface DiscountTarget {
   deliveryOption: {
@@ -29,7 +33,10 @@ export function run(input: RunInput): FunctionRunResult {
     // Iterate over each delivery group and find Express options
     deliveryGroups.forEach((group) => {
       group.deliveryOptions.forEach((option) => {
-        if (option.title === "Express") {
+        if (
+          option.title?.toLowerCase() ===
+          configuration.method_name.toLowerCase()
+        ) {
           expressOptions.push({
             deliveryOption: {
               handle: option.handle,
@@ -46,7 +53,7 @@ export function run(input: RunInput): FunctionRunResult {
           {
             value: {
               percentage: {
-                value: "50", // 50% discount
+                value: configuration.discount,
               },
             },
             targets: expressOptions,

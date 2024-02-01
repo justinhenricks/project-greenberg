@@ -45,6 +45,16 @@ To run the automated test suite of the function:
 2. run: `npm run test`
 3. should see all test cases passing
 
+## Questions?
+
+1. Can this discount apply to only one-time purchases and not subscription products?
+   From what I can tell, it seems like the subscription products will also allow the discount function to run and for the customer to checkout with that shipping
+   option/discount selected.
+
+There seems to be some limitations though in that, it looks like Shopify is defaulting to only showing the cheapest option, so if that happens to not be the method with this discount, it doesn't get shown.
+
+I'm sure there are some workarounds, perhaps, like if it was really important for the discounted method to be the one shown, perhaps we'd write business logic to determine if it was a subscription product, then hide all other methods and only show the one you want, with the discount. I could see that working.
+
 ## Developer resources
 
 - [Introduction to Shopify apps](https://shopify.dev/docs/apps/getting-started)
